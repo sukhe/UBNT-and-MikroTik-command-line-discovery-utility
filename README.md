@@ -1,7 +1,7 @@
 # UBNT and Mikrotik command line discovery utility
 Command line utility for Ubiquiti (UBNT) Device Discovery and MikroTik Neighbor Discovery Protocol (MNDP)
 
-## Purpose of the program
+### Purpose of the program
 
 This utility is designed to search in the local network devices manufactured by UBNT and MikroTik  - wireless access points, routers, switches.
 
@@ -9,19 +9,19 @@ Unlike manufacturers' utilities, this one does not have a graphical interface. T
 
 The search is performed both using proprietary protocols and CDP and LLDP protocols. Therefore, devices from other manufacturers may be present in the results.
 
-You can explicitly specify which protocols to use. Or you can specify the `u` or `m` options to use the same protocol set as Ubiquity and Microtik.
+You can explicitly specify which protocols to use. Or you can specify the `u` or `m` options to use the same protocol sets as Ubiquity and Microtik.
 
 Because different protocols have different data fields - you can save the results for each protocol in a separate file.
 
 The program was tested on Python 3.7 and 3.8 on Debian 10 and FreeBSD 13.
 
-## Using the discovery.py
+### Working principles
 
 First, you need to specify where the program receives data from. 
 
 There are two possible options:
-1) capturing packets from the network (specify the interface name)
-2) parsing a file with previously captured packets (specify the file name)
+1. capturing packets from the network (specify the interface name)
+2. parsing a file with previously captured packets (specify the file name)
 
 Packet capturing can be active or passive (silence). In passive mode, it simply listens to the network and captures suitable packets.
 
@@ -41,11 +41,12 @@ The results of packet parsing are output to a text file and to standard output.
 
 Possible output formats - txt, json, csv, tree (tree output with grouping wi-fi clients by access points).
 
+### Using the discovery.py
 
-
-usage: discovery.py [-h] (-r READ | -i INTERFACE) [-a ADDRESS] [-p PORT] [-P PROTOCOLS [PROTOCOLS ...]] [-m] [-u] [-S] [-s] [-t TIMEOUT] [-c COUNT] [-d DELAY]
-                    [-w WRITE] [-f FILE_NAME] [-y {json,csv,txt,tree}] [--file-options FILE_OPTIONS] [-o {json,csv,txt,tree}] [--output-options OUTPUT_OPTIONS]
-                    [-q]
+```
+usage: discovery.py [-h] (-r READ | -i INTERFACE) [-a ADDRESS] [-p PORT] [-P PROTOCOLS [PROTOCOLS ...]] [-m] [-u] [-S] [-s] 
+                    [-t TIMEOUT] [-c COUNT] [-d DELAY] [-w WRITE] [-f FILE_NAME] [-y {json,csv,txt,tree}] 
+                    [--file-options FILE_OPTIONS] [-o {json,csv,txt,tree}] [--output-options OUTPUT_OPTIONS] [-q]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -53,7 +54,8 @@ optional arguments:
   -i INTERFACE, --interface INTERFACE
                         Source interface for discovery request
   -a ADDRESS, --address ADDRESS
-                        Source address for MNDP discovery request. If not specified, requests will be sent to all addresses assigned to the interface. (default
+                        Source address for MNDP discovery request. If not specified, requests will be sent to all addresses 
+                        assigned to the interface. (default
                         - not specified)
   -p PORT, --port PORT  Source port for UBNT discovery request (default - 33333)
   -P PROTOCOLS [PROTOCOLS ...], --protocols PROTOCOLS [PROTOCOLS ...]
@@ -81,3 +83,4 @@ optional arguments:
   --output-options OUTPUT_OPTIONS
                         For "json" format - indent (default - 4), for "csv" - delimiter (default - ",")
   -q, --quiet           Disable output to stdout (default - not specified)
+```
