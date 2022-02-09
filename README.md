@@ -44,9 +44,10 @@ Possible output formats - txt, json, csv, tree (tree output with grouping wi-fi 
 ### Using the discovery.py
 
 ```
-usage: discovery.py [-h] (-r READ | -i INTERFACE) [-a ADDRESS] [-p PORT] [-P PROTOCOLS [PROTOCOLS ...]] [-m] [-u] [-S] [-s] 
-                    [-t TIMEOUT] [-c COUNT] [-d DELAY] [-w WRITE] [-f FILE_NAME] [-y {json,csv,txt,tree}] 
-                    [--file-options FILE_OPTIONS] [-o {json,csv,txt,tree}] [--output-options OUTPUT_OPTIONS] [-q]
+usage: discovery.py [-h] (-r READ | -i INTERFACE) [-a ADDRESS] [-p PORT] [-P PROTOCOLS [PROTOCOLS ...]] 
+                    [-m] [-u] [-S] [-s] [-t TIMEOUT] [-c COUNT] [-d DELAY] [-w WRITE] [-f FILE_NAME] 
+                    [-y {json,csv,txt,tree}] [--file-options FILE_OPTIONS] [-o {json,csv,txt,tree}] 
+                    [--output-options OUTPUT_OPTIONS] [-q]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -54,15 +55,15 @@ optional arguments:
   -i INTERFACE, --interface INTERFACE
                         Source interface for discovery request
   -a ADDRESS, --address ADDRESS
-                        Source address for MNDP discovery request. If not specified, requests will be sent to all addresses 
-                        assigned to the interface. (default
-                        - not specified)
+                        Source address for MNDP discovery request. If not specified, requests will be sent 
+                        to all addresses assigned to the interface. (default- not specified)
   -p PORT, --port PORT  Source port for UBNT discovery request (default - 33333)
   -P PROTOCOLS [PROTOCOLS ...], --protocols PROTOCOLS [PROTOCOLS ...]
                         Protocols, used to discovery (default - cdp mndp lldp ubnt)
   -m, --mikrotik        Emulate MikroTik Neighbor Discovery (default - not specified)
   -u, --ubnt            Emulate UBNT discovery (default - not specified)
-  -S, --separate-files  Use a separate result files for each protocol (default - don't use, with csv type file - always used)
+  -S, --separate-files  Use a separate result files for each protocol (default - don't use, with csv type 
+                        file - always used)
   -s, --silence         Don't send discovery packet. Use only passive capturing.
   -t TIMEOUT, --timeout TIMEOUT
                         How long wait responses, in seconds (default - 20)
