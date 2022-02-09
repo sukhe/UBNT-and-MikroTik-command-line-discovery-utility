@@ -1,15 +1,15 @@
-# UBNT and Mikrotik command line discovery utility
+# UBNT and MikroTik command line discovery utility
 Command line utility for Ubiquiti (UBNT) Device Discovery and MikroTik Neighbor Discovery Protocol (MNDP)
 
 ### Purpose of the program
 
-This utility is designed to search in the local network devices manufactured by UBNT and MikroTik  - wireless access points, routers, switches.
+This utility is designed to search in the local network devices manufactured by UBNT and MikroTik - wireless access points, routers, switches.
 
 Unlike manufacturers' utilities, this one does not have a graphical interface. That allows you to use it in scripts, run it from cron, etc.
 
 The search is performed both using proprietary protocols and CDP and LLDP protocols. Therefore, devices from other manufacturers may be present in the results.
 
-You can explicitly specify which protocols to use. Or you can specify the `u` or `m` options to use the same protocol sets as Ubiquity and Microtik.
+You can explicitly specify which protocols to use. Or you can specify the `u` or `m` options to use the same protocol sets as Ubiquity and MicroTik.
 
 Because different protocols have different data fields - you can save the results for each protocol in a separate file.
 
